@@ -3,6 +3,7 @@ import {changeTextAction,buttonClickAction} from '../../redux/user/index'
 import {  connect } from 'react-redux';
 
 //定义组件
+@connect(mapStateToProps, mapDispatchToProps)
 class User extends React.Component{
     render() {
         console.log(this.props)
@@ -33,7 +34,7 @@ function mapDispatchToProps(dispatch){
 }
 
 //连接组件
-export default User = connect(mapStateToProps, mapDispatchToProps)(User)
+export default User 
 
 
 

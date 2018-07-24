@@ -52,9 +52,9 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test --env=jsdom"
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -91,12 +91,10 @@
     ]
   },
   "babel": {
-    "plugins": [
-      "transform-decorators-legacy"
-    ],
     "presets": [
       "react-app"
-    ]
+    ],
+    "plugins": ["transform-decorators-legacy"]
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,5 +1,4 @@
 import React from 'react';
-import {changeTextAction,buttonClickAction,loginSuccess} from '../../redux/login/index'
 import {  connect } from 'react-redux';
 import { Button, WingBlank, WhiteSpace } from 'antd-mobile';
 import { List, InputItem } from 'antd-mobile';

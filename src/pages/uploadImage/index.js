@@ -30,7 +30,7 @@ export default class UploadImage extends React.Component {
         
         fetch('/api/v1/upload', {
             method: 'POST',
-            headers:{'Content-Type':'multipart/form-data;boundary=----WebKitFormBoundarygMA4j1ALlxMDETOB','path':'img'},
+            // headers:{'Content-Type':'multipart/form-data;boundary=----WebKitFormBoundarygMA4j1ALlxMDETOB','path':'img'},
             body: formData // 这里是请求对象
         })
         .then((res)=>{

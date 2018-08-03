@@ -11,7 +11,7 @@ router.post('/upload', async (ctx, next) => {
     console.log('开始上传文件')
     console.log(ctx.request.body)
     // console.log(ctx.request)
-    const file = ctx.request.body.files.file;     // 获取上传文件
+    const file = ctx.request.files.file;     // 获取上传文件
     const reader = fs.createReadStream(file.path);    // 创建可读流
     const ext = file.name.split('.').pop();        // 获取上传文件扩展名
     const upStream = fs.createWriteStream(`upload/${Math.random().toString()}.${ext}`);        // 创建可写流

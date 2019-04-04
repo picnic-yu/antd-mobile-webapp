@@ -10,6 +10,7 @@ const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeM
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
+const px2rem = require('postcss-px2rem');
 const paths = require('./paths');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -159,7 +160,7 @@ module.exports = {
           // In production, we use a plugin to extract that CSS to a file, but
           // in development "style" loader enables hot editing of CSS.
           {
-            test: /\.css$/,
+            test: /\.(css|scss|sass)$/,
             use: [
               require.resolve('style-loader'),
               {
@@ -185,9 +186,13 @@ module.exports = {
                       ],
                       flexbox: 'no-2009',
                     }),
+                    px2rem({remUnit:75})
                   ],
                 },
               },
+              {
+                loader:require.resolve('sass-loader')
+              }
             ],
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.

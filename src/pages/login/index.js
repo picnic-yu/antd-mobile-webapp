@@ -1,18 +1,17 @@
 import React from 'react';
-import {  connect } from 'react-redux';
 import { Button, WingBlank, WhiteSpace } from 'antd-mobile';
-import { List, InputItem } from 'antd-mobile';
+import {  InputItem } from 'antd-mobile';
 import { createForm } from 'rc-form';
-// 通过自定义 moneyKeyboardWrapProps 修复虚拟键盘滚动穿透问题
-// https://github.com/ant-design/ant-design-mobile/issues/307
-// https://github.com/ant-design/ant-design-mobile/issues/163
-const isIPhone = new RegExp('\\biPhone\\b|\\biPod\\b', 'i').test(window.navigator.userAgent);
-let moneyKeyboardWrapProps;
-if (isIPhone) {
-  moneyKeyboardWrapProps = {
-    onTouchStart: e => e.preventDefault(),
-  };
-}
+// // 通过自定义 moneyKeyboardWrapProps 修复虚拟键盘滚动穿透问题
+// // https://github.com/ant-design/ant-design-mobile/issues/307
+// // https://github.com/ant-design/ant-design-mobile/issues/163
+// const isIPhone = new RegExp('\\biPhone\\b|\\biPod\\b', 'i').test(window.navigator.userAgent);
+// let moneyKeyboardWrapProps;
+// if (isIPhone) {
+//   moneyKeyboardWrapProps = {
+//     onTouchStart: e => e.preventDefault(),
+//   };
+// }
 
 //定义组件
 
@@ -32,7 +31,7 @@ class Login extends React.Component{
         this.inputRef.focus();
     }
     handleLogin(){
-        if(this.state.user == 'chen' && this.state.pwd == 'admin'){
+        if(this.state.user === 'chen' && this.state.pwd === 'admin'){
             console.log(this.props)
             this.props.history.push('/home');
         }else{
